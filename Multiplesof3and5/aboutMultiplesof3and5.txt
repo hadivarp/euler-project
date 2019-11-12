@@ -1,0 +1,37 @@
+
+
+This is description of first question of euler project witch you can find it on "eulerproject.net".
+
+
+* If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000. 
+
+To solve this problem : we use "range" method to choose a set of natural numbers, like this :
+
+z = (1..1000).to_a
+
+after that , as question said : we need "list all the natural numbers below 1000 that are multiples of 3 or 5" so we use another method in ruby witch called  "select"
+
+b = z.select{|number| number%3 == 0 || number%5 == 0 }
+
+"hint" : as question said (list all the natural numbers below 1000 that are multiples of 3 "or" 5) so we use simbol of or => ( || ) 
+but we can use simbol of and => ( && ) to minimize lentgh of new array.
+
+b = z.select{|number| number%3 == 0 && number%5 == 0 }
+
+
+TO sum content of new array we use another method witch called "inject"
+
+b.inject(0){|sum,x| sum + x }
+
+"hint2" : to see the result of question you have to use "irb" and follow this instruction.
+
+
+
+
+
+
+
+
+
